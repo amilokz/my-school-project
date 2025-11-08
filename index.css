@@ -1,0 +1,376 @@
+/* 🌐 Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004aad;
+  padding: 15px 40px;
+  flex-wrap: wrap;
+}
+
+
+/* 🎥 Background Video Section */
+.welcome-section {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: fadeInBackground 1.5s ease-in-out;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0;
+  animation: fadeInVideo 2s ease-in-out forwards;
+}
+
+/* ✨ Fade-in animations */
+@keyframes fadeInVideo {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.welcome-text {
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.3);
+  padding: 30px;
+  border-radius: 12px;
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional subtle glow animation for title */
+.welcome-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #004aad, 0 0 30px #007bff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #004aad, 0 0 60px #007bff;
+  }
+}
+
+.welcome-text p {
+  font-size: 1.3rem;
+}
+
+/* 🎯 Buttons below welcome text */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background-color: #ffcc00;
+  color: #004aad;
+}
+
+.btn-secondary:hover {
+  background-color: #e6b800;
+  transform: translateY(-3px);
+}
+
+
+.logo img {
+  height: 60px;
+  border-radius: 10px;
+}
+
+/* Navbar menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+.menu ul li a:hover,
+.menu ul li a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* 🔍 Search Bar */
+.search {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.search i {
+  color: #007bff;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* 🏠 Home Page Content */
+.page-content {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e3f2fd, #f1f8ff);
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-content h1 {
+  font-size: 36px;
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+.page-content p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* 🧾 Lists & Sections */
+.page-content ul,
+.page-content ol {
+  text-align: left;
+  display: inline-block;
+  margin-top: 20px;
+  color: #444;
+}
+
+.page-content h2 {
+  color: #004aad;
+  margin-top: 25px;
+}
+
+/* 📚 Academic / About / Events styling */
+.page-content li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* 🧍 Login Form */
+.login-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form input {
+  width: 80%;
+  max-width: 300px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-form button {
+  background-color: #004aad;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #007bff;
+}
+
+/* 🦶 Footer */
+footer {
+  background-color: #004aad;
+  color: #fff;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 60px;
+  position: relative;
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .search {
+    margin-top: 10px;
+  }
+
+  .page-content {
+    padding: 40px 15px;
+  }
+
+  .page-content h1 {
+    font-size: 28px;
+  }
+
+  .login-form input {
+    width: 90%;
+  }
+}
+
+/* 🌈 Extra home page cards (optional section) */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  color: #004aad;
+}
+
+.card p {
+  color: #555;
+  font-size: 14px;
+}
+
+
+/* Initial state for fade-in elements */
+.page-content,
+.cards .card {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Only fade-in elements on home page */
+body:not(.home) .page-content,
+body:not(.home) .cards .card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
